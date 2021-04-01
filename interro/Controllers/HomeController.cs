@@ -24,6 +24,7 @@ namespace interro.Controllers
       
         public IActionResult Index()
         {
+           
             var Bridges = GetBridgeFromApi();
             var select = new Bridge(); 
             DateTime today =  DateTime.Now;
@@ -39,7 +40,9 @@ namespace interro.Controllers
                   
                
             }
-           // select.closing_date = today;
+            ViewData["jour"] = select.closing_date.DayOfWeek ;
+            ViewData["jourOuverture"] = select.reopening_date.DayOfWeek;
+            // select.closing_date = today;
 
 
 

@@ -20,10 +20,10 @@
         
         
             <tr>
-                <td>@Model.boat_name</td>
+                <td> @Model.boat_name</td>
                 <td>@Model.closing_type</td>
-                <td>@Model.closing_date</td>
-                <td>@Model.reopening_date</td>
+                <td>@ViewData["jour"] @Model.closing_date</td>
+                <td>@ViewData["jourOuverture"] @Model.reopening_date</td>
             </tr>
         
     </tbody>
