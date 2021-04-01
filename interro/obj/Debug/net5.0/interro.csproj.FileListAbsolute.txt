@@ -38,3 +38,4 @@ C:\Users\Allan\Desktop\interoNET\interro\obj\Debug\net5.0\ref\interro.dll
 C:\Users\Allan\Desktop\interoNET\interro\obj\Debug\net5.0\interro.pdb
 C:\Users\Allan\Desktop\interoNET\interro\obj\Debug\net5.0\interro.genruntimeconfig.cache
 C:\Users\Allan\Desktop\interoNET\interro\obj\Debug\net5.0\interro.csproj.CopyComplete
+C:\Users\Allan\Desktop\interoNET\interro\bin\Debug\net5.0\Newtonsoft.Json.dll
