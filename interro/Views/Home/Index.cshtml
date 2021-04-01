@@ -17,14 +17,14 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var bridge in Model)
-        {
+        
+        
             <tr>
-                <td>@bridge.boat_name</td>
-                <td>@bridge.closing_type</td>
-                <td>@bridge.closing_date</td>
-                <td>@bridge.reopening_date</td>
+                <td>@Model.boat_name</td>
+                <td>@Model.closing_type</td>
+                <td>@Model.closing_date</td>
+                <td>@Model.reopening_date</td>
             </tr>
-        }
+        
     </tbody>
 </table>

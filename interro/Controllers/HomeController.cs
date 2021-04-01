@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -24,10 +25,25 @@ namespace interro.Controllers
         public IActionResult Index()
         {
             var Bridges = GetBridgeFromApi();
+            var select = new Bridge(); 
+            DateTime today =  DateTime.Now;
+            foreach(var item in Bridges)
+            {
+                int result = DateTime.Compare(today,item.closing_date);
+                if (result < 0)
+                {
+                    select = item;
+                    break;
+                }
+               
+                  
+               
+            }
+           // select.closing_date = today;
 
 
 
-            return View(Bridges);
+            return View(select);
         }
 
         public IActionResult Privacy()
