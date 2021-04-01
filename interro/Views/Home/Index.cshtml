@@ -6,14 +6,25 @@
     <h1 class="display-4">Prochaine fermeture</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<tbody>
-    @foreach (var bridge in Model)
-    {
+
+<table class="table">
+    <thead>
         <tr>
-            <td>@bridge.boat_name</td>
-            <td>@bridge.closing_type</td>
-            <td>@bridge.closing_date</td>
-            <td>@bridge.reopening_date</td>
+            <th>Name</th>
+            <th>Closing type</th>
+            <th>closing date</th>
+            <th>reopening_date</th>
         </tr>
-    }
-</tbody>
+    </thead>
+    <tbody>
+        @foreach (var bridge in Model)
+        {
+            <tr>
+                <td>@bridge.boat_name</td>
+                <td>@bridge.closing_type</td>
+                <td>@bridge.closing_date</td>
+                <td>@bridge.reopening_date</td>
+            </tr>
+        }
+    </tbody>
+</table>
