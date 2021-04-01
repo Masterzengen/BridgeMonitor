@@ -14,16 +14,19 @@
             <th>Closing type</th>
             <th>closing date</th>
             <th>reopening_date</th>
+            <th>Duration</th>
         </tr>
     </thead>
     <tbody>
         
         
             <tr>
-                <td> @Model.boat_name</td>
+                <td>@Model.boat_name</td>
                 <td>@Model.closing_type</td>
                 <td>@ViewData["jour"] @Model.closing_date</td>
                 <td>@ViewData["jourOuverture"] @Model.reopening_date</td>
+                <td>@ViewData["durée"] Hours</td>
+           
             </tr>
         
     </tbody>

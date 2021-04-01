@@ -40,8 +40,10 @@ namespace interro.Controllers
                   
                
             }
+            var span = select.reopening_date.Subtract(select.closing_date);
             ViewData["jour"] = select.closing_date.DayOfWeek ;
             ViewData["jourOuverture"] = select.reopening_date.DayOfWeek;
+            ViewData["durée"] = span.Hours;
             // select.closing_date = today;
 
 
