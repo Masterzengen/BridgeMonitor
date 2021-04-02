@@ -27,7 +27,7 @@ namespace interro.Controllers
            
             var Bridges = GetBridgeFromApi();
             var select = new Bridge(); 
-            DateTime today =  DateTime.Now;
+            var today =  DateTime.Now;
             foreach(var item in Bridges)
             {
                 int result = DateTime.Compare(today,item.closing_date);
@@ -40,10 +40,24 @@ namespace interro.Controllers
                   
                
             }
+            var test = select.closing_date.ToString("o", CultureInfo.InvariantCulture);
             var span = select.reopening_date.Subtract(select.closing_date);
+            var debut = select.closing_date.Hour;
+            var fin = select.reopening_date.Hour;
+            var bouchon = "Faible";
+            
+            if ((debut == 7 && fin == 9)||(debut == 17 && fin == 19))
+            {
+                bouchon = "Elevé";
+            }
+            
             ViewData["jour"] = select.closing_date.DayOfWeek ;
             ViewData["jourOuverture"] = select.reopening_date.DayOfWeek;
             ViewData["durée"] = span.Hours;
+            ViewData["test"] = test;
+            ViewData["bouchon"] = bouchon;
+            ViewData["debut"] = debut;
+            ViewData["fin"] = fin;
             // select.closing_date = today;
 
 
