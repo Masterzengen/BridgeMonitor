@@ -32,21 +32,26 @@
             <th>Closing date</th>
             <th>Reopening date</th>
             <th>Duration</th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
 
         @for (int i = 0; i < all.Count; i++)
         {
-            <tr>
-                <td>@all[i].boat_name</td>
-                <td>@all[i].closing_type</td>
-                <td>@all[i].closing_date</td>
-                <td>@all[i].reopening_date</td>
-                <td>@all[i].reopening_date.Subtract(all[i].closing_date) Hours</td>
+        <tr>
+            <td>@all[i].boat_name</td>
+            <td>@all[i].closing_type</td>
+            <td>@all[i].closing_date</td>
+            <td>@all[i].reopening_date</td>
+            <td>@all[i].reopening_date.Subtract(all[i].closing_date) Hours</td>
+            <td>
+            
+                    <button class="btn btn-primary"  title="Plus de détails.">Details</button>
+                
+            </td>
 
-
-            </tr>
+        </tr>
         }
     </tbody>
 </table>
@@ -58,19 +63,26 @@
             <th>Closing type</th>
             <th>Closing date</th>
             <th>Reopening date</th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
 
         @for (int i = 0; i < old.Count; i++)
         {
-            <tr>
-                <td>@old[i].boat_name</td>
-                <td>@old[i].closing_type</td>
-                <td>@old[i].closing_date</td>
-                <td>@old[i].reopening_date</td>
+        <tr>
+            <td>@old[i].boat_name</td>
+            <td>@old[i].closing_type</td>
+            <td>@old[i].closing_date</td>
+            <td>@old[i].reopening_date</td>
+            <td>
 
-            </tr>
+                <button class="btn btn-primary" title="Plus de détails.">Details</button>
+
+            </td>
+
+
+        </tr>
         }
     </tbody>
 </table>
