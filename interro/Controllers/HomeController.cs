@@ -56,8 +56,6 @@ namespace interro.Controllers
             ViewData["durée"] = span.Hours;
             ViewData["test"] = test;
             ViewData["bouchon"] = bouchon;
-            ViewData["debut"] = debut;
-            ViewData["fin"] = fin;
             // select.closing_date = today;
 
 
