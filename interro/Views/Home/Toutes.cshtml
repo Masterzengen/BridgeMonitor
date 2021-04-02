@@ -1,0 +1,76 @@
+@{
+    ViewData["Title"] = "Toutes les fermetures";
+
+    List<Bridge> all = ViewData["Bridges"] as List<Bridge>;
+    List<Bridge> old = new List<Bridge>();
+    for (int i = 0; i < all.Count; i++)
+    {
+        if (all[i].closing_date.CompareTo(DateTime.Now) < 0)
+        {
+            old.Add(all[i]);
+            all.RemoveAt(i);
+        }
+    }
+
+    all.Sort((s1, s2) => DateTimeOffset.Compare(s1.closing_date, s2.closing_date));
+    old.Sort((s1, s2) => DateTimeOffset.Compare(s1.closing_date, s2.closing_date));
+
+
+
+
+
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Liste de toutes les fermetures</p>
+<h1><center>Prochaines fermetures</center></h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Closing type</th>
+            <th>Closing date</th>
+            <th>Reopening date</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int i = 0; i < all.Count; i++)
+        {
+            <tr>
+                <td>@all[i].boat_name</td>
+                <td>@all[i].closing_type</td>
+                <td>@all[i].closing_date</td>
+                <td>@all[i].reopening_date</td>
+                <td>@all[i].reopening_date.Subtract(all[i].closing_date) Hours</td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+<h1><center>Anciennes fermetures </center></h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Closing type</th>
+            <th>Closing date</th>
+            <th>Reopening date</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int i = 0; i < old.Count; i++)
+        {
+            <tr>
+                <td>@old[i].boat_name</td>
+                <td>@old[i].closing_type</td>
+                <td>@old[i].closing_date</td>
+                <td>@old[i].reopening_date</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

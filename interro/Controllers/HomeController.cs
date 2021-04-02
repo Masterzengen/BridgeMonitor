@@ -65,8 +65,11 @@ namespace interro.Controllers
             return View(select);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Toutes()
         {
+            var Bridges = GetBridgeFromApi();
+            ViewData["Bridges"] = Bridges;
+
             return View();
         }
 
