@@ -32,7 +32,7 @@
 </table>
 <h2><center>Risque de bouchon</center></h2>
 <p><center><strong>@ViewData["bouchon"]</strong></center></p>
-<p>Temps avant prochaine fermeture (ne marche pas encore avec les valeurs dynamiques)</p>
+<p>Temps avant prochaine fermeture</p>
 <p id="demo"></p>
 
 
@@ -40,8 +40,8 @@
 <script>
    
     //var test = ViewData["test"] as String;
-    
-    var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+    //codé en dur, j'ai beau éssayer toutes les conversions de DateTime ça ne marche pas, c'est fortement enquiquinant
+    var countDownDate = new Date("Dec 5, 2021 15:37:25").getTime();
   
 
     
